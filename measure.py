@@ -25,6 +25,16 @@ async def test(identifier):
             f"address “{mac_address}”"
         )
 
+        adc_config = ADCConfiguration(
+            reference_voltage=3.3,
+            prescaler=16,
+            acquisition_time=8,
+            oversampling_rate=64,
+        )
+        sample_rate = adc_config.sample_rate()
+        print(f"Set sample rate to {sample_rate} Hz")
+        await network.write_adc_configuration(**adc_config)
+
         sensor_range = await network.read_acceleration_sensor_range_in_g()
         print(f"Sensor Range: {sensor_range/2} g")
 
