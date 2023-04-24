@@ -30,7 +30,7 @@ async def test(identifier):
 
         conversion_to_g = partial(convert_raw_to_g, max_value=sensor_range)
 
-        measurement_time_s = 10
+        measurement_time_s = 3 * 60
 
         print(f"Measure acceleration values for {measurement_time_s} seconds…")
         filepath = Path(__file__).parent / "experiment.hdf5"
