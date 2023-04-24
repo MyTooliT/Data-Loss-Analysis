@@ -39,9 +39,15 @@ async def test(identifier):
         with Storage(filepath) as storage:
             start_time = time()
             async with network.open_data_stream(first=True) as stream:
-                async for data in stream:
-                    data.apply(conversion_to_g)
-                    storage.add_streaming_data(data)
+                async for stream_data in stream:
+                    stream_data.apply(conversion_to_g)
+                    x_acceleration_values = stream_data.first
+                    for timestamped in x_acceleration_values:
+                        storage.add_acceleration(
+                            values={"x": timestamped.value.magnitude},
+                            counter=timestamped.counter,
+                            timestamp=timestamped.timestamp * 1000,
+                        )
 
                     if time() - start_time >= measurement_time_s:
                         break
