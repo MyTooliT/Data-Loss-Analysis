@@ -38,3 +38,20 @@ Data loss (as reported by `icoanalyzer`) (commit [`3ccd825d`](https://github.com
 | ----- | ---------- | ---------- | ---------- |
 | macOS | 0 %        | 0 %        | 0 %        |
 | Linux | 0.46 %     | 0.03 %     | 1.08 %     |
+
+##### Third Version
+
+- Collect data for a longer time (three minutes instead of 10 seconds) (commit [`9530a279`](https://github.com/MyTooliT/Data-Loss-Analysis/commit/9530a279dd74cd6aaf080c744a07dc1c1e8e2048))
+
+| OS    | 1. Attempt | 2. Attempt                           | 3. Attempt                             |
+| ----- | ---------- | ------------------------------------ | -------------------------------------- |
+| macOS | 33.09 %    | Error (CAN Controller Read Too Late) | 33.68 % (CAN Controller Read Too Late) |
+| Linux | 33.93 %    | 34.07 %                              | 33.43 %                                |
+
+##### Fourth Version
+
+- Collect data for an even longer time (10 minutes) (commit [`b26b447d`](https://github.com/MyTooliT/Data-Loss-Analysis/commit/b26b447d903514fe65a56f44073f747df549f54c))
+
+| OS    | 1. Attempt | 2. Attempt | 3. Attempt |
+| ----- | ---------- | ---------- | ---------- |
+| Linux | 33.72 %    | 33.81 %    | % 33.68    |
