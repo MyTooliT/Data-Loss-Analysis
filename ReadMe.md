@@ -54,4 +54,15 @@ Data loss (as reported by `icoanalyzer`) (commit [`3ccd825d`](https://github.com
 
 | OS    | 1. Attempt | 2. Attempt | 3. Attempt |
 | ----- | ---------- | ---------- | ---------- |
-| Linux | 33.72 %    | 33.81 %    | % 33.68    |
+| Linux | 33.72 %    | 33.81 %    | 33.68 %    |
+
+##### Fifth Version
+
+- Collect data for 10 minutes
+- Decrease sample rate (1681 Hz)
+- Commit [`4a33699e`](https://github.com/MyTooliT/Data-Loss-Analysis/commit/4a33699e71d0783c0604458a627313e0c3619d5c)
+
+| OS    | 1. Attempt | 2. Attempt | 3. Attempt |
+| ----- | ---------- | ---------- | ---------- |
+| Linux | 0.02 %     | 0.03 %     | 0.03 %     |
+| macOS | 0.0 %      | 0.0 %      | 0.0 %      |
